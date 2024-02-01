@@ -1,7 +1,7 @@
 import streamlit as st
 from PyPDF2 import PdfReader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings 
 import google.generativeai as genai
 from langchain.vectorstores import FAISS
@@ -65,14 +65,14 @@ def main():
     st.set_page_config("Chat With PDF")
     st.header("Chat with PDF powered by Gemini pro🤖")
 
-    user_question = st.text_input("Ask a Question from the PDF Files")
+    user_question = st.text_input("Ask a Question here")
 
     if user_question:
         user_input(user_question)
 
     with st.sidebar:
         st.title("Menu:")
-        pdf_docs = st.file_uploader("Upload your files and click on the Submit & Process", type="pdf", accept_multiple_files=True)
+        pdf_docs = st.file_uploader("1.Upload your files \n\n 2.Click the Submit & Process ", type="pdf", accept_multiple_files=True)
         if st.button("Submit & Process"):
             with st.spinner("processing..."):
                 raw_text = ""
