@@ -1,5 +1,6 @@
 # Gemini-PDF-Question-Answering-System
-This project is a Streamlit application that allows users to upload multiple PDF files, ask questions about the content of the PDFs, and receive answers based on the provided context.
+
+### This Streamlit app let's users upload, process multiple PDFs, and ask questions on the content using a conversational chat powered by Google's Gemini-pro.
 
 ## Prerequisites
 * Python 3.8 or higher
