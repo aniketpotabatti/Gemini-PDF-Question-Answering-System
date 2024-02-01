@@ -62,8 +62,8 @@ def user_input(user_question):
     st.write("Reply; ", response["output_text"])
     
 def main():
-    st.set_page_config("Chat With Multiple PDF")
-    st.header("Chat with Multiple PDF using Gemini 🙋‍♂️")
+    st.set_page_config("Chat With PDF")
+    st.header("Chat with PDF powered by Gemini pro🤖")
 
     user_question = st.text_input("Ask a Question from the PDF Files")
 
@@ -72,8 +72,8 @@ def main():
 
     with st.sidebar:
         st.title("Menu:")
-        pdf_docs = st.file_uploader("Upload your PDF files and click on the submit & Process", type="pdf", accept_multiple_files=True)
-        if st.button("submit & process"):
+        pdf_docs = st.file_uploader("Upload your files and click on the Submit & Process", type="pdf", accept_multiple_files=True)
+        if st.button("Submit & Process"):
             with st.spinner("processing..."):
                 raw_text = ""
                 text_chunks = []
