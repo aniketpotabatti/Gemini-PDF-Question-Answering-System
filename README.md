@@ -3,7 +3,7 @@
 ### This Streamlit app let's users upload, process multiple PDFs, and ask questions on the content using a conversational chat powered by Google's Gemini-pro.
 
 ## Prerequisites
-* Python 3.8 or higher
+* Python 3.10 or higher
 * Streamlit
 * PyPDF2
 * Langchain
