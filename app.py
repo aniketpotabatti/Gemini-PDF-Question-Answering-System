@@ -35,10 +35,10 @@ def get_vector_store(text_chunks):
 def get_conversional_chain():
 
     prompt_template="""
-    Answer the questionas detailed as possible from the provided context, make sure to provide all the details, if the answer is not in
-    provided context just say, "answer is not available in the context", don't provide the wrong answer\n\n
-    Context:\n {context}?\n
-    Question: \n{question}\n
+    Answer the questions as detailed as possible from the provided context, if the answer is not in
+    provided context just say, "answer is not available in the given file", Provide accurate answers\n\n
+    Context:\n{context}?\n
+    Question:\n{question}\n
 
     Answer:  
     """
