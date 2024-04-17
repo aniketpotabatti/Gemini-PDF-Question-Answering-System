@@ -19,7 +19,7 @@
 ```python
 GOOGLE_API_KEY=<your_google_api_key>
 ```
-5. Run the application by executing streamlit run ```app.py```
+5. Run the application by executing ```streamlit run app.py```
 
 ## Usage
 1. Upload one or more PDF files using the file uploader.
