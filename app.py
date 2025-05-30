@@ -10,11 +10,13 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
+# Extract text content from a list of uploaded PDF documents
 def get_pdf_text(pdf_docs):
     """
     Extracts text from a list of PDF documents.
@@ -33,7 +35,7 @@ def get_pdf_text(pdf_docs):
             text += page.extract_text()
     return text
 
-
+# Split large text into smaller overlapping chunks for efficient embedding and retrieval
 def get_text_chunks(text):
     """
     Splits a large text into smaller chunks for efficient processing.
@@ -49,7 +51,7 @@ def get_text_chunks(text):
     chunks = text_splitter.split_text(text)
     return chunks
 
-
+# Create a FAISS vector store from text chunks using Google Generative AI embeddings
 def get_vector_store(text_chunks):
     """
     Creates a vector store from a list of text chunks.
@@ -66,7 +68,7 @@ def get_vector_store(text_chunks):
     vector_store.save_local("faisss_index")
     return vector_store
 
-
+# Define a prompt template to answer questions based on provided context
 def get_conversional_chain():
     """
     Creates a conversational chain for question answering.
@@ -92,7 +94,7 @@ def get_conversional_chain():
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
     return chain
 
-
+# Process user question by loading the vector store and performing similarity search
 def user_input(user_question, processed_pdf_text):
     """
     Processes user input and generates a response using the conversational chain,
@@ -120,7 +122,7 @@ def user_input(user_question, processed_pdf_text):
     print(response)
     st.write("Reply: ", response["output_text"])
 
-
+# Main Streamlit app function to set up UI and handle user interactions
 def main():
     """
     Main function for the Streamlit app.
